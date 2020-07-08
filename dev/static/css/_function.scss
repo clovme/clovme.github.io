@@ -1,0 +1,452 @@
+@mixin box-shadow($args1, $args2, $args3, $color, $share) {
+  -moz-box-shadow: ($args1 * $one-px) ($args2 * $one-px) ($args3 * $one-px) rgba($color, $share);
+  -webkit-box-shadow: ($args1 * $one-px) ($args2 * $one-px) ($args3 * $one-px) rgba($color, $share);
+  box-shadow: ($args1 * $one-px) ($args2 * $one-px) ($args3 * $one-px) rgba($color, $share);
+}
+
+// 缩放
+@mixin transition($name) {
+  #{$name} {
+    -moz-transition: all 1s ease;
+    -webkit-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    transition: all 1s ease;
+    transition: all 1s;
+    opacity: 1;
+  }
+
+  #{$name}:hover {
+    transform: scale(1.1);
+    opacity: .7;
+  }
+}
+
+// 省略  公共
+@mixin ellipsis() {
+  .ellipsis {
+    position: relative;
+    line-height: 20 * $one-px;
+    max-height: 40 * $one-px;
+    overflow: hidden;
+  }
+
+  .ellipsis::after {
+    content: "...";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding-left: 40 * $one-px;
+  }
+}
+
+// 相关连接
+@mixin otherlink() {
+  .otherlink {
+    .card-body {
+      overflow: hidden;
+      padding-left: 20 * $one-px;
+      padding-right: 20 * $one-px;
+
+      li {
+        position: relative;
+        line-height: 26 * $one-px;
+        height: 26 * $one-px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+
+        a {
+          color: #000
+        }
+
+        a:hover {
+          text-decoration: underline;
+        }
+      }
+
+      li:before {
+        position: absolute;
+        content: "";
+        width: 8 * $one-px;
+        height: 8 * $one-px;
+        background: #000;
+        border-radius: 10 * $one-px;
+        left: 3 * $one-px;
+        top: 9 * $one-px;
+      }
+    }
+  }
+}
+
+// 卡片 card
+@mixin card() {
+  .card {
+    border-radius: 3 * $one-px;
+    @include box-shadow(0, 0, 5, $black, .5);
+
+    .card-header {
+      padding: 0;
+      height: 35 * $one-px;
+      line-height: 35 * $one-px;
+
+      ul {
+        li {
+          border: 0;
+          height: 33.4 * $one-px;
+          padding: 0;
+          background-color: rgba(0, 0, 0, 0);
+        }
+
+        li:nth-child(1) {
+          width: 35 * $one-px;
+          font-size: 17 * $one-px;
+          border-right: $one-px solid rgba(0, 0, 0, .125);
+          border-bottom-left-radius: 0;
+          color: #515151;
+        }
+
+        li:nth-child(2) {
+          flex: 1;
+          padding-left: 5 * $one-px;
+        }
+
+        li:nth-child(3) {
+          padding-right: 17.5 * $one-px;
+
+          a {
+            color: #666;
+
+            i {
+              font-size: 19 * $one-px;
+            }
+          }
+
+          a:hover {
+            color: #000;
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+
+    // a标签
+    .card-img-zoom {
+      overflow: hidden;
+      background-color: #1b53ff;
+      @include transition(img);
+    }
+
+    .card-img-zoom, .card-img-zoom img {
+      height: 140 * $one-px;
+      border-radius: 3 * $one-px;
+    }
+
+    .card-body {
+      .card-title {
+        overflow: hidden;
+        height: 30 * $one-px;
+        text-align: center;
+        font-weight: bold;
+        line-height: 30 * $one-px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        margin-bottom: 0;
+
+        a {
+          color: #333;
+          font-size: 14 * $one-px;
+        }
+      }
+
+      .card-text {
+        color: #6c6c6c;
+        font-size: 14 * $one-px;
+        margin-bottom: 0;
+      }
+    }
+
+    .card-footer {
+      li {
+        height: 32 * $one-px;
+        line-height: 32 * $one-px;
+
+        a, i {
+          color: #4b4b4b;
+        }
+      }
+
+      li:first-child {
+        border-right: .0625rem solid rgba(0, 0, 0, .125);
+      }
+
+      li:nth-child(2) {
+        i {
+          margin-left: 3 * $one-px;
+          margin-right: 3 * $one-px;
+        }
+      }
+
+      li:last-child {
+        border-left: .0625rem solid rgba(0, 0, 0, .125);
+      }
+    }
+  }
+}
+
+// 列表
+@mixin list-content-card-body() {
+  .list-content-card-body {
+    padding: 0;
+    margin: 0;
+
+    li, li .card-header {
+      -webkit-box-shadow: none;
+      -moz-box-shadow: none;
+      box-shadow: none;
+      border: 0;
+      border-radius: 0;
+    }
+
+    li {
+      margin: 0 0 (10 * $one-px) 0;
+      padding: 0 0 (5 * $one-px) (5 * $one-px);
+      border-bottom: ($one-px * 2) dotted #eee !important;
+
+      .card-header {
+        font-size: 18 * $one-px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        margin-left: 10 * $one-px;
+
+        a {
+          color: #333;
+        }
+
+        b {
+          color: #F00
+        }
+      }
+
+      .card-content {
+        margin-top: -3px;
+        display: flex;
+
+        .card-body {
+          position: relative;
+          display: block;
+          flex: 3.5;
+          padding: 0;
+          margin-left: 10 * $one-px;
+          margin-right: 10 * $one-px;
+
+          .card-text:first-child {
+            max-height: 60 * $one-px;
+            overflow: hidden;
+          }
+
+          .card-text {
+            overflow: hidden;
+
+            .text-muted:first-child {
+              position: absolute;
+              bottom: -2px;
+              left: 0;
+              font-size: 16px;
+            }
+
+            .text-muted:last-child {
+              position: absolute;
+              bottom: 0;
+              right: 0;
+
+              button, a {
+                margin: 0 (2 * $one-px);
+                padding: 0 ($one-px * 5);
+              }
+
+              a {
+                color: #007bff;
+
+                i {
+                  color: #007bff;
+                }
+              }
+
+              a:hover {
+                color: #FFF;
+
+                i {
+                  color: #FFF;
+                }
+              }
+            }
+          }
+        }
+
+        .card-content-img,
+        .card-content-img img {
+          height: 90 * $one-px;
+        }
+
+        .card-content-img {
+          position: relative;
+          flex: 1;
+          overflow: hidden;
+          margin-left: 10 * $one-px;
+          @include transition(img);
+
+          span {
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 9;
+            font-style: normal;
+            padding: (3  * $one-px) (5  * $one-px);
+            background: #007bff;
+            font-size: 14 * $one-px;
+            border-bottom-right-radius: $one-px * 3;
+            border-top-left-radius: $one-px * 3;
+
+            a {
+              color: #FFF;
+            }
+          }
+
+          span:hover {
+            a {
+              text-decoration: underline;
+            }
+          }
+        }
+
+        .card-content-img, .card-content-img img {
+          border-radius: 3 * $one-px;
+        }
+      }
+
+      ul.pagination {
+        margin: 0 auto;
+        padding: (10 * $one-px) 0;
+
+        li {
+          border-bottom: 0 !important;
+          margin: 0;
+          padding: 0;
+        }
+
+        li.page-item.disabled {
+          cursor: default;
+        }
+
+        li:first-child.page-item.disabled,
+        li:last-child.page-item.disabled {
+          cursor: no-drop;
+        }
+      }
+    }
+
+
+    // 单独文字处理
+    .card-body-text {
+      margin: 0;
+      padding-right: (10 * $one-px);
+      padding-left: (10 * $one-px);
+
+      .card-header {
+        margin: 0;
+        line-height: 30 * $one-px;
+      }
+
+      .card-content {
+        margin-top: -7px;
+
+        .card-body {
+          margin: 0;
+          position: unset !important;
+
+          .card-text:first-child {
+            line-height: 17px;
+          }
+
+          .card-text:last-child {
+            width: 100%;
+            height: 25 * $one-px;
+            position: relative;
+          }
+        }
+      }
+    }
+
+    li:last-child {
+      border-bottom: 0 !important;
+    }
+
+    li:hover {
+      background-color: #f5f5f5;
+
+      .card-header {
+        a {
+          color: #337ab7;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+@mixin icons(){
+  .linkmore {
+    li {
+      padding: 3 * $one-px;
+
+      a {
+        width: 60 * $one-px;
+        height: 60 * $one-px;
+        display: block;
+        overflow: hidden;
+        box-shadow: 0 $one-px 0 rgba(255, 255, 255, .5), inset 0 $one-px $one-px rgba(0, 0, 0, .7);
+        border-radius: 50%;
+      }
+
+      a:hover {
+        opacity: 0.5;
+      }
+
+
+      a.iconfont.icon-zhuye {
+        color: #ef5509;
+        font-size: 36 * $one-px;
+        background: url(images/c01.png) no-repeat center;
+      }
+
+      a.iconfont.icon-youxiang {
+        color: #FF991A;
+        font-size: 28 * $one-px;
+        background: url(images/c02.png) no-repeat center;
+      }
+
+      a.iconfont.icon--- {
+        color: #1296DB;
+        background: url(images/c03.png) no-repeat center;
+      }
+
+      a.iconfont.icon-weixin {
+        color: #07AF12;
+        background: url(images/c04.png) no-repeat center;
+      }
+
+      a.iconfont.icon-gitee {
+        color: #07AF12;
+        background: url(images/c05.png) no-repeat center;
+      }
+
+      a.iconfont.icon-github {
+        color: #07AF12;
+        background: url(images/c06.png) no-repeat center;
+      }
+    }
+  }
+}

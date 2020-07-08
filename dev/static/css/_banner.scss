@@ -1,0 +1,11 @@
+.search-content {
+  height: 12.5rem;
+  top: $one-px * 36;
+  overflow: hidden;
+  position: fixed;
+  border-bottom: $one-px solid $border-color;
+
+  .card-body{
+    padding: .525rem * 2 + .1;
+  }
+}

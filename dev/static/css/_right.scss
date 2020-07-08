@@ -1,0 +1,73 @@
+.content-wrap {
+  z-index: 1;
+  top: $content-top;
+  padding-top: 50 * $one-px;
+  position: absolute;
+  padding-bottom: 50 * $one-px;
+  background-color: #F4F4F4;
+  border-top: $one-px solid $border-color;
+
+  .container {
+    @include list-content-card-body();
+
+    .breadcrumb {
+      margin-bottom: 10 * $one-px;
+      background-color: unset;
+      border-radius: $one-px * 3;
+      padding: (5 * $one-px) (10 * $one-px);
+      border-bottom: $one-px solid #c7c9cc;
+      @include box-shadow(0, 0, 5, $black, .5);
+
+      .breadcrumb-item {
+        padding-left: $one-px * 5;
+      }
+
+      .breadcrumb-item:before {
+        padding-right: $one-px * 5;
+      }
+    }
+
+    .row {
+      .content-left {
+        padding-left: 5 * $one-px;
+        padding-right: 5 * $one-px;
+
+        .pagination-card {
+          li {
+            a {
+              font-size: 24 * $one-px;
+              padding: 0 (20 * $one-px);
+            }
+          }
+
+          li:hover {
+            a {
+              i {
+                color: #000 !important;
+              }
+            }
+          }
+        }
+      }
+
+      .content-right {
+        // 我的名片
+        @include userinfo();
+
+        //云标签
+        @include label-cloud();
+
+        // 搜索
+        @include right-search();
+
+        // 浏览排行
+        @include browse-ranking();
+
+        // 站长推荐
+        @include recommend();
+        // 站长推荐
+        @include notice();
+      }
+    }
+  }
+}

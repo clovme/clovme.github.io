@@ -1,0 +1,11 @@
+@import "public";
+
+.menu-wrap {
+  position: fixed;
+  top: 43.9875px;
+}
+
+.content-wrap {
+  top: 80 * $one-px;
+  padding-top: 20 * $one-px;
+}

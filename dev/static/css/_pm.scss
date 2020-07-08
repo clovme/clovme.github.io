@@ -1,0 +1,85 @@
+@mixin padding-margin($args) {
+  // 全方位
+  .m#{$args} {
+    margin: $args * $one-px;
+  }
+  .p#{$args} {
+    padding: $args * $one-px;
+  }
+
+  // 上
+  .mt#{$args} {
+    margin-top: $args * $one-px;
+  }
+  .pt#{$args} {
+    padding-top: $args * $one-px;
+  }
+
+  // 下
+  .mb#{$args} {
+    margin-bottom: $args * $one-px;
+  }
+  .pb#{$args} {
+    padding-bottom: $args * $one-px;
+  }
+
+  // 左
+  .ml#{$args} {
+    margin-left: $args * $one-px;
+  }
+  .pl#{$args} {
+    padding-left: $args * $one-px;
+  }
+
+  // 右
+  .mr#{$args} {
+    margin-right: $args * $one-px;
+  }
+  .pr#{$args} {
+    padding-right: $args * $one-px;
+  }
+
+  // 上下
+  .mtb#{$args} {
+    margin-top: $args * $one-px;
+    margin-bottom: $args * $one-px;
+  }
+  .ptb#{$args} {
+    padding-top: $args * $one-px;
+    padding-bottom: $args * $one-px;
+  }
+
+  // 左右
+  .mlr#{$args} {
+    margin-left: $args * $one-px;
+    margin-right: $args * $one-px;
+  }
+  .plr#{$args} {
+    padding-left: $args * $one-px;
+    padding-right: $args * $one-px;
+  }
+
+  // 左右上
+  .mtlr#{$args} {
+    margin-left: $args * $one-px;
+    margin-right: $args * $one-px;
+    margin-top: $args * $one-px;
+  }
+  .ptlr#{$args} {
+    padding-left: $args * $one-px;
+    padding-right: $args * $one-px;
+    padding-top: $args * $one-px;
+  }
+
+  // 左右下
+  .mblr#{$args} {
+    margin-left: $args * $one-px;
+    margin-right: $args * $one-px;
+    margin-bottom: $args * $one-px;
+  }
+  .pblr#{$args} {
+    padding-left: $args * $one-px;
+    padding-right: $args * $one-px;
+    padding-bottom: $args * $one-px;
+  }
+}

@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="utf-8">
+    <title>今夕何夕 - 列表</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" href="plugins/bootstrap/css/bootstrap.css"/>
+    <link rel="stylesheet" type="text/css" href="plugins/font-awesome/font-awesome.css"/>
+    <link rel="stylesheet" type="text/css" href="css/common.css"/>
+    <link rel="stylesheet" type="text/css" href="css/login.css"/>
+    <!--当前页-->
+    <link rel="stylesheet" type="text/css" href="css/top43.css"/>
+    <link rel="stylesheet" type="text/css" href="css/register.css"/>
+</head>
+<body data-spy="scroll" style="height: 100%">
+<!--Header-->
+<header class="navbar navbar-expand-sm fixed-top navbar-dark">
+    <a class="navbar-brand" href="/">今夕何夕</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"  aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <nav class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="col"></div>
+        <ul class="navbar-nav mr-auto text-center">
+            <li class="nav-item"><a class="nav-link" href="/">首页 <span class="sr-only">(current)</span></a></li>
+            <li class="nav-item"><a class="nav-link" href="search.html">搜索</a></li>
+            <li class="nav-item"><a class="nav-link" href="list.html">列表</a></li>
+            <li class="nav-item"><a class="nav-link" href="details.html">详情</a></li>
+            <li class="nav-item"><a class="nav-link" href="publish.html">发布</a></li>
+            <li class="nav-item"><a class="nav-link" href="personal.html">个人中心</a></li>
+            <li class="nav-item"><a class="nav-link" onclick="showModal('SignInModal')" href="javascript:void(0)">登录</a></li>
+            <li class="nav-item active"><a class="nav-link" href="register.html">注册</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!--导航菜单-->
+<div class="container-fluid p0 menu-wrap">
+    <div class="container plr0">
+        <a class="col nav-menu" href="javascript:void(0)" id="z1"><i class="fa fa-paint-brush"></i>&nbsp;UI <i class="fa fa-angle-down"></i></a>|
+        <a class="col nav-menu" href="javascript:void(0)" id="z2"><i class="fa fa-keyboard-o"></i>&nbsp;输入 <i class="fa fa-angle-down"></i></a>|
+        <a class="col nav-menu" href="javascript:void(0)" id="z3"><i class="fa fa-film"></i>&nbsp;媒体 <i class="fa fa-angle-down"></i></a>|
+        <a class="col nav-menu" href="javascript:void(0)" id="z4"><i class="fa fa-paper-plane-o"></i>&nbsp;导航 <i class="fa fa-angle-down"></i></a>
+        <span class="nav-menu-block">|
+            <a class="col nav-menu" href="javascript:void(0)" id="z5"><i class="fa fa-dropbox"></i>&nbsp;其他 <i class="fa fa-angle-down"></i></a>
+            <a class="col nav-menu" href="javascript:void(0)" target="_blank"><i class="fa fa-th-large"></i>&nbsp;网页模板</a>|
+            <a class="col nav-menu" href="javascript:void(0)" target="_blank"><i class="fa fa-tablet"></i>&nbsp;APP模板</a>|
+            <a class="col nav-menu" href="javascript:void(0)" target="_blank"><i class="fa fa-file-code-o"></i>&nbsp;常用代码</a>|
+            <a class="col nav-menu" href="javascript:void(0)" target="_blank"><i class="fa fa-code"></i>&nbsp;在线代码</a>
+        </span>
+    </div>
+    <div class="container-fluid plr0" id="menu-content" style="display: none;">
+        <div id="n1" class="nav-zi">
+            <div id="nz1" class="container" style="display: none;">
+                <div class="row p0">
+                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-4 col-6"><a href="javascript:void(0)"><i class="fa fa-delicious ls"></i>背景</a></div>
+                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-4 col-6"><a href="javascript:void(0)"><i class="fa fa-bell-o ls"></i>对话框</a></div>
+                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-4 col-6"><a href="javascript:void(0)"><i class="fa fa-sort-numeric-desc ls"></i>筛选及排序</a></div>
+                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-4 col-6"><a href="javascript:void(0)"><i class="fa fa-comments-o ls"></i>反馈</a></div>
+                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-4 col-6"><a href="javascript:void(0)"><i class="fa fa-stack-overflow ls"></i>弹出层</a></div>
+                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-4 col-6"><a href="javascript:void(0)"><i class="fa fa-hand-o-up ls"></i>悬停</a></div>
+                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-4 col-6"><a href="javascript:void(0)"><i class="fa fa-th-large ls"></i>布局</a></div>
+                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-4 col-6"><a href="javascript:void(0)"><i class="fa fa-bar-chart ls"></i>图表</a></div>
+                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-4 col-6"><a href="javascript:void(0)"><i class="fa fa-spinner ls"></i>加载</a></div>
+                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-4 col-6"><a href="javascript:void(0)"><i class="fa fa-circle-o ls"></i>圆边</a></div>
+                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-4 col-6"><a href="javascript:void(0)"><i class="fa fa-long-arrow-down ls"></i>滚动</a></div>
+                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-4 col-6"><a href="javascript:void(0)"><i class="fa fa-tags ls"></i>标签</a></div>
+                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-4 col-6"><a href="javascript:void(0)"><i class="fa fa-link ls"></i>文本链接</a></div>
+                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-4 col-6"><a href="javascript:void(0)"><i class="fa fa-info-circle ls"></i>工具提示</a></div>
+                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-4 col-6"><a href="javascript:void(0)"><i class="fa fa-code-fork ls"></i>网络类型</a></div>
+                </div>
+            </div>
+            <div id="nz2" class="container" style="display: none;">
+                <div class="row p0">
+                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-4 col-6"><a href="javascript:void(0)"><i class="fa fa-eyedropper ls"></i>拾色器</a></div>
+                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-4 col-6"><a href="javascript:void(0)"><i class="fa fa-paint-brush ls"></i>定制和风格</a></div>
+                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-4 col-6"><a href="javascript:void(0)"><i class="fa fa-clock-o ls"></i>日期和时间</a></div>
+                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-4 col-6"><a href="javascript:void(0)"><i class="fa fa-arrows ls"></i>拖和放</a></div>
+                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-4 col-6"><a href="javascript:void(0)"><i class="fa fa-keyboard-o ls"></i>通用输入</a></div>
+                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-4 col-6"><a href="javascript:void(0)"><i class="fa fa-calculator ls"></i>自动完成</a></div>
+                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-4 col-6"><a href="javascript:void(0)"><i class="fa fa-lock ls"></i>密码</a></div>
+                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-4 col-6"><a href="javascript:void(0)"><i class="fa fa-thumbs-up ls"></i>投票率</a></div>
+                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-4 col-6"><a href="javascript:void(0)"><i class="fa fa-search ls"></i>搜索</a></div>
+                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-4 col-6"><a href="javascript:void(0)"><i class="fa fa-caret-square-o-down ls"></i>选择框</a></div>
+                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-4 col-6"><a href="javascript:void(0)"><i class="fa fa-adn ls"></i>快捷键</a></div>
+                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-4 col-6"><a href="javascript:void(0)"><i class="fa fa-hand-o-down ls"></i>触摸</a></div>
+                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-4 col-6"><a href="javascript:void(0)"><i class="fa fa-h-square ls"></i>丰富的输入</a></div>
+                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-4 col-6"><a href="javascript:void(0)"><i class="fa fa-upload ls"></i>上传</a></div>
+                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-4 col-6"><a href="javascript:void(0)"><i class="fa fa-key ls"></i>验证</a></div>
+                </div>
+            </div>
+            <div id="nz3" class="container" style="display: none;">
+                <div class="row p0">
+                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-4 col-6"><a href="javascript:void(0)"><i class="fa fa-play-circle-o ls"></i>音频和视频</a></div>
+                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-4 col-6"><a href="javascript:void(0)"><i class="fa fa-exchange ls"></i>幻灯片和轮播图</a></div>
+                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-4 col-6"><a href="javascript:void(0)"><i class="fa fa-eye ls"></i>图片展示</a></div>
+                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-4 col-6"><a href="javascript:void(0)"><i class="fa fa-picture-o ls"></i>图像</a></div>
+                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-4 col-6"><a href="javascript:void(0)"><i class="fa fa-map-marker ls"></i>地图</a></div>
+                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-4 col-6"><a href="javascript:void(0)"><i class="fa fa-arrows-h ls"></i>滑块和旋转</a></div>
+                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-4 col-6"><a href="javascript:void(0)"><i class="fa fa-folder-o ls"></i>Tabs</a></div>
+                </div>
+            </div>
+            <div id="nz4" class="container" style="display: none;">
+                <div class="row p0">
+                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-4 col-6"><a href="javascript:void(0)"><i class="fa fa-long-arrow-right ls"></i>水平导航</a></div>
+                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-4 col-6"><a href="javascript:void(0)"><i class="fa fa-long-arrow-down ls"></i>垂直导航</a></div>
+                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-4 col-6"><a href="javascript:void(0)"><i class="fa fa-sitemap ls"></i>文件树</a></div>
+                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-4 col-6"><a href="javascript:void(0)"><i class="fa fa-chevron-right ls"></i>分页</a></div>
+                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-4 col-6"><a href="javascript:void(0)"><i class="fa fa-trello ls"></i>手风琴菜单</a></div>
+                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-4 col-6"><a href="javascript:void(0)"><i class="fa fa-location-arrow ls"></i>其他导航</a></div>
+                </div>
+            </div>
+            <div id="nz5" class="container" style="display: none;">
+                <div class="row p0">
+                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-4 col-6"><a href="javascript:void(0)"><i class="fa fa-rocket ls"></i>动画效果</a></div>
+                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-4 col-6"><a href="javascript:void(0)"><i class="fa fa-expand ls"></i>浏览/预览器调整</a></div>
+                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-4 col-6"><a href="javascript:void(0)"><i class="fa fa-arrows-v ls"></i>移动</a></div>
+                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-4 col-6"><a href="javascript:void(0)"><i class="fa fa-cogs ls"></i>独立的部件</a></div>
+                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-4 col-6"><a href="javascript:void(0)"><i class="fa fa-gift ls"></i>杂项</a></div>
+                    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-4 col-6"><a href="javascript:void(0)"><i class="fa fa-gamepad ls"></i>游戏</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--内容-->
+<div class="container-fluid p0 content-wrap">
+    <div class="container plr0 pb5">
+        <div class="row content-left col">
+            <div class="card col plr0">
+                <div class="card-header">
+                    <ul class="list-group list-group-horizontal">
+                        <li class="list-group-item text-center"><i class="fa fa-user-plus" aria-hidden="true"></i></li>
+                        <li class="list-group-item">用户注册</li>
+                    </ul>
+                </div>
+                <div class="card-body">
+                    <form id="register" class="register mb15" action="" method="post">
+                        <h2 class="text-center mb15"><span>今夕何夕</span>用户注册</h2>
+                        <div class="input-group mb15">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text"><i class="fa fa-envelope-o" aria-hidden="true"></i></div>
+                            </div>
+                            <input name="email" data-email="请输入正确的电子邮箱" data-required="必须输入邮箱" type="text" class="form-control" placeholder="请输入登录邮箱">
+                            <div class="input-group-prepend">
+                                <button class="btn btn-primary" id="send_code" type="button">发送验证码</button>
+                            </div>
+                        </div>
+                        <div class="input-group mb15">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text"><i class="fa fa-envelope" aria-hidden="true"></i></div>
+                            </div>
+                            <input name="email_code" data-length="6" data-required="必须输入邮箱验证码" type="text" class="form-control" placeholder="请输入邮箱验证码">
+                        </div>
+                        <div class="input-group mb15">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text"><i class="fa fa-user-secret" aria-hidden="true"></i></div>
+                            </div>
+                            <input name="username" data-required="必须输入用户名" data-length="1-10" type="text" class="form-control" placeholder="请输入用户名">
+                        </div>
+                        <div class="input-group mb15">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text"><i class="fa fa-key" aria-hidden="true"></i></div>
+                            </div>
+                            <input name="password" id="password" data-required="必须输入登录密码" data-password="6-16位字母数字和._~!@#$%^&*()+-=" type="password" class="form-control" placeholder="请输入密码">
+                        </div>
+                        <div class="input-group mb15">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text"><i class="fa fa-check" aria-hidden="true"></i></div>
+                            </div>
+                            <input name="confirm_password" data-required="请输入密码再确认密码" data-equal="#password" type="password" class="form-control" placeholder="请确认密码">
+                        </div>
+                        <div class="input-group mb5">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text"><i class="fa fa-qrcode" aria-hidden="true"></i></div>
+                            </div>
+                            <input name="qrcode" data-required="必须输入登录验证码" data-length="6" type="text" class="form-control" placeholder="请输入验证码 (38px)">
+                            <div class="input-group-prepend qrcode-box">
+                                <img class="qrcode" onclick="this.src='images/qrcode.png?_t='+Date.now();" src="images/qrcode.png" alt="">
+                            </div>
+                        </div>
+                        <div class="input-group mb15">
+                            <div class="custom-control agreement custom-checkbox">
+                                <input name="agreement" data-required="必须接受网站协议" type="checkbox" class="custom-control-input" id="agreement">
+                                <label class="custom-control-label" for="agreement">同意<a onclick="showModal('middleModal')" href="javascript:void(0)">网站协议</a><span>已有账号请<a href="#">登录</a></span></label>
+                            </div>
+<!--                            <div class="custom-control text-right custom-checkbox">-->
+<!--                                已有账号请<a href="#">登录</a>-->
+<!--                            </div>-->
+                        </div>
+                        <div class="input-group d-flex bd-highlight mb15">
+                            <button id="reset-form" type="reset" class="btn btn-primary flex-fill bd-highlight">重置表单</button>
+                            <button id="confirm-form" type="button" class="btn btn-success flex-fill bd-highlight">确认注册</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal leftright-slide right-align fade" id="slideRightLargeModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Right Slide Large Modal</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur et quam velit. Ut pellentesque felis non ante dictum, at bibendum ligula dapibus. Nam vitae purus vulputate, facilisis erat gravida, rutrum magna. Duis eleifend nunc a justo fringilla suscipit. Cras sit amet ornare purus, vitae congue tortor. Fusce lacinia, purus ac semper venenatis, nunc tellus blandit arcu, eget lacinia ante nisl id tellus. Duis vel justo nibh.</p>
+
+                <p>In hac habitasse platea dictumst. Integer a lacus iaculis ipsum consequat pretium a non tortor. Nullam quis consequat libero. Ut iaculis non dui vitae gravida.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="SignInModal" tabindex="-1" role="dialog" aria-labelledby="SignInModalModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="SignInModalModalLabel"><i class="fa fa-user-secret" aria-hidden="true"></i>&nbsp;用户登录</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
+            </div>
+            <form class="modal-body signin" id="signin" action="" method="post">
+                <div class="input-group mb15">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text"><i class="fa fa-envelope-o" aria-hidden="true"></i></div>
+                    </div>
+                    <input name="email" type="text" class="form-control" placeholder="请输入登录邮箱">
+                </div>
+                <div class="input-group mb15">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text"><i class="fa fa-key" aria-hidden="true"></i></div>
+                    </div>
+                    <input name="password" data-required="必须输入登录密码"type="password" class="form-control" placeholder="请输入密码">
+                </div>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text"><i class="fa fa-qrcode" aria-hidden="true"></i></div>
+                    </div>
+                    <input name="password" data-required="必须输入6为验证码" type="password" class="form-control" placeholder="请输入验证码">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text qrcode-box">
+                            <img class="qrcode" onclick="this.src='images/qrcode.png?_t='+Date.now();" src="images/qrcode.png">
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <div class="modal-footer more">
+                <ul class="linkmore d-flex m0 p0 justify-content-center">
+                    <li class="col-3"><a href="#" target="_blank" class="iconfont icon-gitee"></a></li>
+                    <li class="col-3"><a href="#" target="_blank" class="iconfont icon-github"></a></li>
+                    <li class="col-3"><a href="#" target="_blank" class="iconfont icon---"></a></li>
+                    <li class="col-3"><a href="#" target="_blank" class="iconfont icon-weixin"></a></li>
+                </ul>
+            </div>
+            <div class="modal-footer justify-content-center">
+                <div class="input-group justify-content-end">
+                    <a href="#">点击注册</a>
+                    <a href="#">忘记密码</a>
+                </div>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">　　　　取消　　　　</button>
+                <button type="button" class="btn btn-primary">　　　　登录　　　　</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="navbar justify-content-between fixed-bottom" style="color: #C8C8C8;background-color:#000;">
+    <div class="col">2016-2019 XXX版权所有. 备案号:沪ICP备13625885号-1 X公网安备 33041655214314号</div>
+</footer>
+
+<script src="plugins/libs/jquery.js"></script>
+<script src="plugins/bootstrap/js/popper.min.js"></script>
+<script src="plugins/bootstrap/js/bootstrap.min.js"></script>
+<script src="js/common.js"></script>
+<script src="plugins/libs/slideVerify.js"></script>
+<script src="plugins/libs/formValidation.js"></script>
+<script src="js/login.js"></script>
+</body>
+</html>
+

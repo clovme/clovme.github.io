@@ -1,0 +1,100 @@
+@import "public";
+
+#SignInModal {
+  .modal-dialog {
+    .modal-content {
+      background: url(./images/quote-bg.png) no-repeat top right rgba(42, 42, 42, 1);
+
+      .modal-header {
+        color: #89919a;
+
+        button {
+          color: #89919a
+        }
+
+        background-color: rgba(0, 0, 0, 0);
+      }
+
+      .modal-body {
+        background-color: rgba(0, 0, 0, 0);
+
+        input, .input-group-text {
+          border: $one-px solid rgba(206, 212, 218, .33);
+          background-color: rgba(0, 0, 0, 0);
+        }
+
+        input {
+          border-left: none;
+        }
+
+        .input-group-text {
+          width: 40 * $one-px;
+        }
+
+        .qrcode-box {
+          width: unset;
+          height: 38 * $one-px;
+          overflow: hidden;
+          padding: 0;
+          border-left: 0;
+          border-top-right-radius: 3 * $one-px;
+          border-bottom-right-radius: 3 * $one-px;
+
+          img {
+            height: 38 * $one-px;
+          }
+        }
+      }
+
+      .modal-footer.more {
+        border: 0 !important;
+      }
+
+      .modal-footer {
+        padding-top: 0;
+        border-radius: 0;
+        background-color: rgba(0, 0, 0, 0);
+
+        .linkmore {
+          margin: 0 auto;
+
+          li {
+            padding: 0 (5 * $one-px);
+          }
+        }
+      }
+
+
+      .modal-footer:last-child {
+        .input-group {
+          margin-top: 0;
+          text-align: right;
+
+          a {
+            color: #89919a;
+          }
+
+          a:hover {
+            color: #FFF;
+          }
+
+          a:first-child {
+            margin-right: 10 * $one-px;
+          }
+        }
+
+        .login-btn-box {
+          width: 100%;
+        }
+
+        button:first-child {
+          margin-right: 5 * $one-px;
+        }
+
+        button:last-child {
+          margin-left: 5 * $one-px;
+        }
+      }
+    }
+  }
+}

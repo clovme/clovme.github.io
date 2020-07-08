@@ -1,0 +1,29 @@
+@charset "UTF-8";
+
+@import "public";
+
+.content-wrap {
+  .container {
+    .row {
+      .content-left {
+        // 轮播tu
+        @include banner-content();
+
+        // 轮播图右面
+        @include headline();
+
+        // 首页选项卡
+        @include newsitem-box();
+
+        // 专题
+        @include zhuanti();
+
+        // 两个盒子
+        @include newsbox();
+
+        // 最新资源
+        @include new-list();
+      }
+    }
+  }
+}

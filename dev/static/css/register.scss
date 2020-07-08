@@ -1,0 +1,53 @@
+@import "public";
+
+.content-wrap {
+  padding-bottom: .125rem;
+
+  .content-left {
+    .card {
+      min-height: 530 * $one-px;
+
+      .card-body {
+
+        form.register {
+          max-width: 450 * $one-px;
+          margin: (10 * $one-px) auto;
+
+          .input-group-text {
+            width: 40 * $one-px;
+          }
+
+          .custom-control.custom-checkbox {
+            width: 100%;
+
+            span {
+              margin-left: 15 * $one-px;
+            }
+          }
+
+          .custom-control.text-right.custom-checkbox {
+            width: 100%;
+          }
+
+          button.flex-fill:first-child {
+            margin-right: 5px;
+          }
+
+          button.flex-fill:last-child {
+            margin-left: 5px;
+          }
+        }
+      }
+    }
+
+    @for $i from 600 through 960 {
+      @if $i % 10 == 0 {
+        @media (min-height: #{$i}px) {
+          .card {
+            height: ($i - 140) * $one-px;
+          }
+        }
+      }
+    }
+  }
+}

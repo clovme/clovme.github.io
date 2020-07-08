@@ -1,0 +1,247 @@
+@charset "UTF-8";
+
+@import "public";
+
+.content-wrap {
+  .sidebar {
+    position: fixed;
+    width: 220 * $one-px;
+    z-index: 1022;
+    white-space: nowrap;
+    transition: all 0.5s;
+
+    .navbar {
+      flex-wrap: unset;
+      white-space: nowrap;
+      border-radius: 3 * $one-px;
+      padding-right: 10 * $one-px;
+      padding-left: 2 * $one-px;
+
+      .brand-title {
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        opacity: 1;
+        transition: all 0.5s;
+        font-size: 18 * $one-px;
+      }
+
+      .brand-title + span {
+        flex: auto;
+      }
+
+      .toggle-sidebar {
+        font-size: 25 * $one-px;
+        transition: margin 0.5s;
+      }
+
+      .navbar-images {
+        display: block;
+        width: 180 * $one-px;
+        height: 80 * $one-px;
+        border-radius: 100%;
+        cursor: pointer;
+        overflow: hidden;
+        margin-right: 5 * $one-px;
+        @include box-shadow(0, 0, 6, $black, .6);
+      }
+
+      @include transition(img);
+
+      img {
+        width: 80 * $one-px;
+        height: 80 * $one-px;
+        border-radius: 100%;
+      }
+    }
+
+    .navigation {
+      margin: 0;
+      padding: 0;
+      overflow: auto;
+
+      li {
+        list-style: none;
+        transition: all 0.5s;
+        position: relative;
+
+        a {
+          overflow: hidden;
+          transition: all 0.5s;
+          position: relative;
+
+          .fa {
+            transition: margin 0.5s;
+          }
+        }
+      }
+    }
+  }
+
+
+  @media screen and (prefers-reduced-motion: reduce) {
+    .sidebar {
+      transition: none;
+
+      .navbar {
+        .toggle-sidebar {
+          transition: none;
+        }
+
+        .brand-title {
+          transition: none;
+        }
+      }
+    }
+    .sidebar + .content-area {
+      transition: none;
+    }
+
+    .navigation li {
+      transition: none;
+
+      a {
+        transition: none;
+
+        .fa {
+          transition: none;
+        }
+      }
+    }
+  }
+
+  .sidebar + .content-area {
+    margin-left: 230 * $one-px;
+    transition: margin 0.5s;
+  }
+
+  @media only screen and (min-width: 992px) {
+    .sidebar.collapsed {
+      width: 41 * $one-px;
+
+      .navbar {
+        place-content: flex-end;
+
+        .brand-title {
+          text-indent: -9em;
+          opacity: 0;
+          transition: all 0.5s;
+        }
+
+        .toggle-sidebar {
+          margin-right: -$one-px;
+        }
+
+        .navbar-images {
+          display: none;
+        }
+      }
+
+      .navigation {
+        overflow-x: hidden;
+        overflow-y: auto;
+
+        li {
+          position: static;
+
+          a {
+            .fa {
+              font-size: 17 * $one-px;
+              margin-left: 3 * $one-px;
+            }
+          }
+        }
+      }
+    }
+
+    .sidebar.collapsed + .content-area {
+      margin-left: 50 * $one-px;
+    }
+  }
+
+  @media only screen and (min-width: 992px) and (prefers-reduced-motion: reduce) {
+    .sidebar.collapsed {
+      .navbar {
+        .brand-title {
+          transition: none;
+        }
+      }
+    }
+  }
+
+  @media only screen and (max-width: 992px) {
+
+    .sidebar {
+      left: -220 * $one-px;
+
+      .navbar {
+        top: -15 * $one-px;
+        left: 27 * $one-px;
+        height: 29 * $one-px;
+        margin-bottom: 0;
+        padding-right: 3 * $one-px;
+
+        .toggle-sidebar {
+          font-size: 20 * $one-px;
+        }
+
+        .navbar-images {
+          display: none;
+        }
+      }
+    }
+
+    .sidebar + .content-area {
+      margin-left: 0;
+    }
+
+    .sidebar.collapsed {
+      width: 220 * $one-px;
+      left: 0;
+      background-color: #eee;
+      border-radius: 3 * $one-px;
+
+
+      .navbar {
+        top: 0;
+        left: 0;
+        font-size: 25 * $one-px;
+        height: unset;
+        padding-right: 10 * $one-px;
+        padding-left: 0;
+        margin-bottom: 5 * $one-px;
+
+        .toggle-sidebar {
+          font-size: 25 * $one-px;
+        }
+
+        .navbar-images {
+          display: block;
+        }
+      }
+    }
+
+    .sidebar.collapsed + .content-area {
+      filter: blur(3 * $one-px);
+      transition: filter 0.5s;
+    }
+
+    .sidebar.collapsed + .content-area:before {
+      content: "";
+      display: block;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background-color: rgba(255, 255, 255, 0.5);
+      width: 100%;
+      height: 100%;
+      z-index: 1021;
+    }
+  }
+
+  @media only screen and (max-width: 992px) and (prefers-reduced-motion: reduce) {
+    .sidebar.collapsed + .content-area {
+      transition: none;
+    }
+  }
+}

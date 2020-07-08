@@ -1,0 +1,33 @@
+@import "public";
+
+.content-wrap {
+  .container {
+    .row {
+      .content-left {
+        .card-body {
+          .extracted-code {
+            border: $one-px dotted #333;
+
+            li:first-child {
+              display: none;
+            }
+
+            li {
+              font-size: 16 * $one-px;
+              margin: (5 * $one-px) 0;
+
+              i {
+                border: 0;
+                padding: 2 * $one-px;
+              }
+
+              span {
+                margin-right: 10 * $one-px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
